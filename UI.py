@@ -6,8 +6,10 @@ from PIL import ImageTk, Image
 
 def UploadAction(event=None):
     filename = filedialog.askopenfilename()
-    path2.insert(END, filename)
+    #path2.insert(END, filename)
     im = Image.open(filename)
+
+
     im = im.resize((320, 320))
     tkimage = ImageTk.PhotoImage(im)
     myvar = Label(frame, image=tkimage)
@@ -23,7 +25,7 @@ def UploadAction1(event=None):
         title="Open Text file",
         filetypes=(("Text Files", "*.txt"),)
         )
-    pathh.insert(END, filename1)
+    #pathh.insert(END, filename1)
     filename1 = open(filename1, 'r')
     data = filename1.read()
     txtarea.insert(END, data)
@@ -37,10 +39,10 @@ root['bg'] = '#fb0'
 txtarea = Text(root, width=40, height=20)
 txtarea.pack(pady=50)
 
-pathh = Entry(root)
-pathh.pack(side=LEFT, expand=True, fill=X, padx=10)
-path2= Entry(root)
-path2.pack(side=LEFT, expand=True, fill=X, padx=10)
+# pathh = Entry(root)
+# pathh.pack(side=LEFT, expand=True, fill=X, padx=10)
+# path2= Entry(root)
+# path2.pack(side=LEFT, expand=True, fill=X, padx=10)
 
 
 
@@ -62,8 +64,8 @@ Second_file = Label(root, text="Select the file to be encrypted", font=("Times N
 # text=Text(root).place(x=400,y=70)
 
 
-button = tk.Button(root, text='Select', command=UploadAction).place(x=300, y=150)
-button2 = tk.Button(root, text='Select', command=UploadAction1).place(x=300, y=70)
+button = tk.Button(root, text='Select', command=UploadAction).place(x=240, y=150)
+button2 = tk.Button(root, text='Select', command=UploadAction1).place(x=240, y=70)
 
 root.mainloop()
 
