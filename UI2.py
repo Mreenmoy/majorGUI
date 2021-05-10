@@ -46,12 +46,26 @@ def encrytingaction(event=None):#callencrytingfucntion
     left_frame.grid(row=0, column=0, padx=10, pady=5)
     right_frame = Frame(encryptwin, width=650, height=400, bg='white')
     right_frame.grid(row=0, column=1, padx=10, pady=5)
-    Label(left_frame, text="Original Image").grid(row=0, column=0, padx=5, pady=5)
+    Label(left_frame, text="Encrypted Image").grid(row=0, column=0, padx=5, pady=5)
 
     tool_bar = Frame(left_frame, width=180, height=185)
     tool_bar.grid(row=2, column=0, padx=5, pady=5)
 
+    def decryptingaction(event=None):  # call decrypting fuction
+        print()
+        passwordlab1 = Label(encryptwin, text="Password", font=("Times New Roman", 11)).place(x=40, y=500)
+        e2 = tk.Entry(encryptwin, show="*", font=('Arial', 14)).place(x=120, y=500)
+        def UploadAction3():
+            filename3 = filedialog.askopenfilename()
+            dm = Image.open(filename3)
+        def UploadAction4():
+            print()
+        encryptedimage = Label(encryptwin, text="Select the encrypted Image", font=("Times New Roman", 11)).place(x=40, y=450)
+        button3 = tk.Button(encryptwin, text='Select', command=UploadAction3).place(x=230, y=450)
+        button4 = tk.Button(encryptwin, text='DECRYPT', command=UploadAction4,width =10 ,height =4).place(x=400, y=450)
     button4 = tk.Button(tool_bar, text='DECRYPT', command=decryptingaction).grid(row=0, column=0, padx=10, pady=30,ipadx=10)
+
+
 
     # Label(tool_bar, text="DECRYPT", relief=RAISED).grid(row=0, column=0, padx=10, pady=30,ipadx=10)
     # ipadx is padding inside the Label widget
@@ -67,8 +81,6 @@ def encrytingaction(event=None):#callencrytingfucntion
 
 
 
-def decryptingaction(event=None):#call decrypting fuction
-    print()
 
 
 
